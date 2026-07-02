@@ -102,4 +102,8 @@ public class CartItemService {
                 .map(cartItemRepository::findByUser)
                 .orElseGet(List::of);
     }
+
+    public void clearCart(User user) {
+        cartItemRepository.deleteByUser(user);
+    }
 }
